@@ -21,8 +21,8 @@ create table ligne(
     dateMService date,
     stationDepart int,
     stationArrivee int,
-    numStation int,
-    foreign key (numStation) references Station(numStation)
+    foreign key (stationDepart) references Station(numStation),
+    foreign key (stationArrivee) references Station(numStation)
 );
 
 create table travaux(
@@ -34,4 +34,5 @@ create table travaux(
     primary key (rumArrondissement, numLigne, dateDebut),
     duree double
 );
+
 
